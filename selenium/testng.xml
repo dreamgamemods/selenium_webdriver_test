@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+ 	<suite name="Suite">	
+		<test name="AppTest1" group-by-instances="true">	
+		      <parameter name="someParameter"  value="TestParam"/>
+				<groups>
+			    <run> 
+			      <include name="group1.*"/>
+			      <include name=".*subgroup2"/>
+			    </run>
+			  </groups>
+  
+			  <classes>
+			    <class name="TestApp">
+			    <!--  <methods>
+			       <include name="parameterTest" />
+			      </methods> --> 
+			    </class>
+			  </classes>
+		</test>	
+  </suite>	
