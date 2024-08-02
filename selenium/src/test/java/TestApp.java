@@ -35,7 +35,7 @@ public class TestApp {
 		BrowserFactory browserfactory = new BrowserFactory();
 		this.driver = browserfactory.getBrowser("CH");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		actions = new CommonActions(); //klasa, do której deleguję wszystkie metody których często używam w testach
+		actions = new CommonActions(); //the class i like to delegate most of my methods
 		actions.setDriver(driver);
 		
 	}
@@ -44,8 +44,8 @@ public class TestApp {
 	@AfterSuite (alwaysRun = true)
 	public void tearDownClass() throws IOException{
 		driver.close();
-	    Runtime.getRuntime().exec("taskkill /im chromedriver.exe /f"); //to jest po to, że driver.close() nie zawsze jest skuteczne
-		//BrowserFactory.closeBrowser(); to jest w przypadku testów używających kilku różnych browserów
+	    Runtime.getRuntime().exec("taskkill /im chromedriver.exe /f"); // driver.close() failsafe
+		//BrowserFactory.closeBrowser(); for tests using multiple browsers
 	}
 	
 
